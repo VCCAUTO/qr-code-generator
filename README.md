@@ -23,6 +23,7 @@ A production-ready React + Vite web app for creating, customizing, and exporting
 - Vite
 - Tailwind CSS
 - `qrcode.react`
+- Capacitor 7 (Android packaging)
 
 ## Development
 
@@ -31,11 +32,50 @@ npm install
 npm run dev
 ```
 
-## Build
+## Build (web)
 
 ```bash
 npm run lint
 npm run build
+```
+
+## Android APK
+
+The project is wrapped with [Capacitor](https://capacitorjs.com/) so it can be built as a native Android APK.
+
+### Prerequisites
+
+- [Android Studio](https://developer.android.com/studio) with Android SDK installed (API 22+)
+- Java 17+
+
+### Build a debug APK
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Build the web app
+npm run build
+
+# 3. Sync web assets into the Android project
+npm run cap:sync
+
+# 4. Build the debug APK
+npm run android:build
+```
+
+The APK is output to:
+```
+android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+Transfer the file to an Android device (or use `adb install`) to sideload it.
+You can also open the `android/` folder in Android Studio for a release/signed build.
+
+### Open in Android Studio
+
+```bash
+npm run cap:open
 ```
 
 ## License

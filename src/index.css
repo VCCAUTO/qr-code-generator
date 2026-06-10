@@ -8,4 +8,9 @@ body {
 
 #root {
   min-height: 100vh;
+  /* Respect device safe-area insets (notch, home bar) */
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
 }
