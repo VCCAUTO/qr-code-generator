@@ -42,8 +42,8 @@ function App() {
   )
 
   const qrSignature = useMemo(
-    () => `${value}|${note}|${errorLevel}|${size}|${fgColor}|${bgColor}|${includeMargin}`,
-    [value, note, errorLevel, size, fgColor, bgColor, includeMargin],
+    () => `${value}|${note}|${errorLevel}|${size}|${format}|${fgColor}|${bgColor}|${includeMargin}`,
+    [value, note, errorLevel, size, format, fgColor, bgColor, includeMargin],
   )
 
   const previewRef = useRef(null)
